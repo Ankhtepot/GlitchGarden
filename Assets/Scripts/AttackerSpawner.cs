@@ -8,7 +8,7 @@ public class AttackerSpawner : MonoBehaviour
     [SerializeField] private float minTimeToSpawn = 1;
     [SerializeField] private float maxTimeToSpawn = 5;
 #pragma warning disable 649
-    [SerializeField] private GameObject[] attackers;
+    [SerializeField] private Attacker[] attackers;
 #pragma warning restore 649
 
     //Caches
@@ -29,8 +29,8 @@ public class AttackerSpawner : MonoBehaviour
 
     private void spawnEnemy()
     {
-            Instantiate(attackers[Random.Range(0, attackers.Length)],
-                transform.position,
-                Quaternion.identity);
+        Attacker newAttacker = Instantiate(
+            attackers[Random.Range(0, attackers.Length)], transform.position, Quaternion.identity) as Attacker;
+        newAttacker.transform.parent = transform;
     }
 }

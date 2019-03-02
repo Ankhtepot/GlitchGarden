@@ -112,6 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346798573fd6cf14b9827c9199c5a511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackerSpawners: []
+  myLaneSpawner: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &2346213613629383520
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2346213613629383551}
   - component: {fileID: 94017672660793527}
+  - component: {fileID: 5502929031547008423}
   m_Layer: 0
   m_Name: Defender Cactus
   m_TagString: Untagged
@@ -138,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 2346213613629383520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 0.14270435}
-  m_LocalScale: {x: 0.83107, y: 0.83107, z: 0.83107}
+  m_LocalScale: {x: -0.83107, y: 0.83107, z: 0.83107}
   m_Children:
   - {fileID: 2346213613549388242}
   m_Father: {fileID: 0}
@@ -156,6 +160,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b345cd532915a142a470196b4cc1fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 100
+--- !u!114 &5502929031547008423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2346213613629383520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0afc1b962da8ff4588b3d6f90b6c99e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 9223145398839565107, guid: 3154ba98955e5dd499d2916e8ed5a1b5,
     type: 3}
-  cost: 100

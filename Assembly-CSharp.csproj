@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Attacker.cs" />
     <Compile Include="Assets\Scripts\AttackerBody.cs" />
     <Compile Include="Assets\Scripts\AttackerSpawner.cs" />
+    <Compile Include="Assets\Scripts\constants\triggers.cs" />
     <Compile Include="Assets\Scripts\Defender.cs" />
     <Compile Include="Assets\Scripts\DefenderButton.cs" />
     <Compile Include="Assets\Scripts\DefenderSpawner.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\SplashScreenController.cs" />
     <Compile Include="Assets\Scripts\StarDisplay.cs" />
     <Compile Include="Assets\Scripts\SystemSounds.cs" />
+    <Compile Include="Assets\Shooter.cs" />
     <None Include="Assets\Imports\Universal Sound FX\#Game Genre References\Platform.txt" />
     <None Include="Assets\Imports\Universal Sound FX\#Game Genre References\Real Time Stategy (RTS) Medieval.txt" />
     <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

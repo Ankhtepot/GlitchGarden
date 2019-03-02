@@ -8,24 +8,28 @@ public class StarDisplay : MonoBehaviour
     [SerializeField] int stars = 200;
     [SerializeField] TextMeshProUGUI starText;
 
+    public int Stars { get => stars; set => stars = value; }
+
     void Start()
     {
         starText = GetComponent<TextMeshProUGUI>();
-        updateDispley();
+        updateDisplay();
     }
 
-    private void updateDispley() {
-        starText.text = stars.ToString();
+    private void updateDisplay() {
+        starText.text = Stars.ToString();
     }
 
     public void AddStars(int addedStars) {
-        stars += addedStars;
-        updateDispley();
+        Stars += addedStars;
+        updateDisplay();
     }
 
     public void ReduceStars(int deductedStars) {
-        if (stars >= deductedStars) {
-            stars -= deductedStars;
+        if (Stars >= deductedStars) {
+            Stars -= deductedStars;
+            updateDisplay();
         }
     }
+
 }

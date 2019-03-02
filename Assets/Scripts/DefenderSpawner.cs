@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefenderSpawner : MonoBehaviour
-{
+public class DefenderSpawner : MonoBehaviour {
 #pragma warning disable 649
     [SerializeField] Defender defender;
+    [SerializeField] List<Vector2> occupiedGridSquares = new List<Vector2>();
 #pragma warning restore 649
 
     private void OnMouseDown() {
@@ -15,7 +15,12 @@ public class DefenderSpawner : MonoBehaviour
 
     private void SpawnSelected(Vector2 worldPosition) {
         Defender newDefender = defender;
-        if (defender)  newDefender = Instantiate(defender, worldPosition, Quaternion.identity) as Defender;
+        if (!defender) return;
+        if (hasEnoughStars(defender.Cost) && !isClickedSquareOccupied(worldPosition)) {
+            occupiedGridSquares.Add(worldPosition);
+            FindObjectOfType<StarDisplay>().Stars -= defender.Cost;
+            newDefender = Instantiate(defender, worldPosition, Quaternion.identity) as Defender;
+        }
     }
 
     private Vector2 getClickedSquare(Vector2 clickPosition) {
@@ -27,5 +32,14 @@ public class DefenderSpawner : MonoBehaviour
 
     public void SetSelectedDefender(Defender newDefender) {
         defender = newDefender;
+    }
+
+    private bool hasEnoughStars(int cost) {
+        return FindObjectOfType<StarDisplay>().Stars >= cost;
+    }
+
+    private bool isClickedSquareOccupied(Vector2 checkedSquare) {
+        print("Clicked square is occupied: " + occupiedGridSquares.Contains(checkedSquare));
+        return occupiedGridSquares.Contains(checkedSquare);
     }
 }
