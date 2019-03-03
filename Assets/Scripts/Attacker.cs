@@ -1,20 +1,23 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.constants;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Health))]
 public class Attacker : MonoBehaviour
 {
 #pragma warning disable 649
     [Range(0f, 3f)] [SerializeField] private float walkingSpeed;
     [SerializeField] private float walkingSpeedActual;
-    [SerializeField] int healthPoints;
     [SerializeField] int attackPower;
-    [SerializeField] ParticleSystem deathEffect;
+    [SerializeField] GameObject currentTarget;
+    [SerializeField] Animator animator;
 #pragma warning restore 649
 
     void Start()
     {
         walkingSpeedActual = 0f;
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -28,7 +31,7 @@ public class Attacker : MonoBehaviour
     }    
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        print("Triggered with: " + collision.gameObject.name);
+       // print("Triggered with: " + collision.gameObject.name);
         Projectile projectile = collision.gameObject.GetComponent<Projectile>();
         if (projectile) {
             reduceHP(projectile.getAttackPower());
@@ -37,12 +40,25 @@ public class Attacker : MonoBehaviour
     }
 
     private void reduceHP(int damage) {
-        healthPoints -= damage;
-        if (healthPoints <= 0) Die();
+        GetComponent<Health>().ReceiveDamage(damage);
     }
 
-    private void Die() {
-        if(deathEffect) Instantiate(deathEffect, transform.position, Quaternion.identity).Play();
-        Destroy(gameObject);
+    public void Attack(GameObject target) {
+        animator.SetBool(triggers.ATTACK, true);
+        currentTarget = target;
+    }
+
+    public void StrikeCurrentTarget() {
+        if (!currentTarget) {
+            animator.SetBool(triggers.ATTACK, false);
+            return;
+        }
+        if (currentTarget.GetComponent<Defender>()) {
+            currentTarget.GetComponent<Defender>().ReactionOnAttack();
+        }
+        Health health = currentTarget.GetComponent<Health>();
+        if(health) {
+            health.ReceiveDamage(attackPower);
+        }
     }
 }

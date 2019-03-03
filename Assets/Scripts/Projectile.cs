@@ -11,7 +11,6 @@ public class Projectile : MonoBehaviour
 #pragma warning disable 649
     [SerializeField] Directions directionPreset = Directions.Right;
     [SerializeField] float movementSpeed;
-    [SerializeField] float rotationSpeed;
     [SerializeField] int attackPower;
     [SerializeField] int healthPoints;
     [SerializeField] float lifetime = 5f;
@@ -27,7 +26,6 @@ public class Projectile : MonoBehaviour
 
     private void Update() {
         transform.Translate(direction * movementSpeed * Time.deltaTime);
-        transform.Rotate(Vector3.left, rotationSpeed);
     }
 
     private Vector3 getDirection() {

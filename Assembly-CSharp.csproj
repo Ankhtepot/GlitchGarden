@@ -60,27 +60,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Prefabs\DefenderCactus\CactusBody.cs" />
+    <Compile Include="Assets\Prefabs\--- Attackers\Fox\Fox.cs" />
+    <Compile Include="Assets\Prefabs\--- Attackers\Lizard\Lizard.cs" />
+    <Compile Include="Assets\Prefabs\--- Defenders\Gravestone\Gravestone.cs" />
+    <Compile Include="Assets\Prefabs\--- GameParts\BaseCollider.cs" />
+    <Compile Include="Assets\Prefabs\--- GameParts\DefenderButton.cs" />
+    <Compile Include="Assets\Prefabs\--- GameParts\DefenderSpawner.cs" />
+    <Compile Include="Assets\Prefabs\--- GameParts\PlayerHealthText.cs" />
+    <Compile Include="Assets\Prefabs\--- GameParts\SpawnPoint.cs" />
+    <Compile Include="Assets\Prefabs\--- GameParts\StarDisplay.cs" />
+    <Compile Include="Assets\Prefabs\--- System\Globals.cs" />
+    <Compile Include="Assets\Prefabs\--- System\SceneLoader.cs" />
+    <Compile Include="Assets\Prefabs\--- System\SoundMachine.cs" />
+    <Compile Include="Assets\Prefabs\--- System\SoundSystemImpl.cs" />
+    <Compile Include="Assets\Prefabs\--- System\SplashScreenController.cs" />
+    <Compile Include="Assets\Prefabs\--- System\SystemSounds.cs" />
     <Compile Include="Assets\Scripts\AddStars.cs" />
     <Compile Include="Assets\Scripts\Attacker.cs" />
     <Compile Include="Assets\Scripts\AttackerBody.cs" />
     <Compile Include="Assets\Scripts\AttackerSpawner.cs" />
+    <Compile Include="Assets\Scripts\constants\enIntegers.cs" />
+    <Compile Include="Assets\Scripts\constants\scenes.cs" />
     <Compile Include="Assets\Scripts\constants\triggers.cs" />
     <Compile Include="Assets\Scripts\Defender.cs" />
-    <Compile Include="Assets\Scripts\DefenderButton.cs" />
-    <Compile Include="Assets\Scripts\DefenderSpawner.cs" />
-    <Compile Include="Assets\Scripts\enIntegers.cs" />
-    <Compile Include="Assets\Scripts\Globals.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISoundSystem.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
-    <Compile Include="Assets\Scripts\SceneLoader.cs" />
-    <Compile Include="Assets\Scripts\SoundMachine.cs" />
-    <Compile Include="Assets\Scripts\SoundSystemImpl.cs" />
-    <Compile Include="Assets\Scripts\SpawnPoint.cs" />
-    <Compile Include="Assets\Scripts\SplashScreenController.cs" />
-    <Compile Include="Assets\Scripts\StarDisplay.cs" />
-    <Compile Include="Assets\Scripts\SystemSounds.cs" />
-    <Compile Include="Assets\Shooter.cs" />
+    <Compile Include="Assets\Scripts\Shooter.cs" />
     <None Include="Assets\Imports\Universal Sound FX\#Game Genre References\Platform.txt" />
     <None Include="Assets\Imports\Universal Sound FX\#Game Genre References\Real Time Stategy (RTS) Medieval.txt" />
     <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
