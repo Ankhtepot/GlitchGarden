@@ -7,7 +7,13 @@ public class Health : MonoBehaviour
 #pragma warning disable 649
     [SerializeField] int healthPoints;
     [SerializeField] ParticleSystem deathVFX;
+    [SerializeField] LevelController GC;
 #pragma warning disable 649
+
+    private void Start()
+    {
+        GC = FindObjectOfType<LevelController>();
+    }
 
     public void ReceiveDamage(int damage) {
         healthPoints -= damage;
@@ -17,11 +23,11 @@ public class Health : MonoBehaviour
     private void Die() {
         if (GetComponent<BaseCollider>()) GetComponent<BaseCollider>().LoseProcess();
         else if (deathVFX) Instantiate(deathVFX, transform.position, Quaternion.identity).Play();
+       
         Destroy(gameObject);
     }
 
     public int getHealthpoints() {
         return healthPoints;
     }
-
 }

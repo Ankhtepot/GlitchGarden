@@ -10,6 +10,8 @@ public class SceneLoader : MonoBehaviour
     //Caches
     [SerializeField] private int totalSceneCount;
     [SerializeField] private int activeSceneIndex;
+    [SerializeField] private int optionsSceneIndex = 4;
+    [SerializeField] private int firstLevelSceneIndex = 2;
 
     void Start()
     {
@@ -23,9 +25,11 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
+        print("In LoadNextScene");
         if (activeSceneIndex < totalSceneCount)
         {
-            loadScene(++activeSceneIndex);
+            print("New level shuld be loaded");
+            loadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -46,5 +50,25 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene(int sceneToBeLoaded) {
         loadScene(sceneToBeLoaded);
+    }
+
+    public void ReloadScene()
+    {
+        loadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void loadOptionsScreen()
+    {
+        loadScene(optionsSceneIndex);
+    }
+
+    public void LoadFirstLevel()
+    {
+        loadScene(firstLevelSceneIndex);
     }
 }

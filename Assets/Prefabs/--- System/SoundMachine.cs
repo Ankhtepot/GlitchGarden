@@ -7,16 +7,10 @@ using UnityEngine.Serialization;
 public class SoundMachine : MonoBehaviour
 {
     [SerializeField] public SystemSounds SystemSounds;
-    
-    
+    [SerializeField] public Music music;
 
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        music.PlayMainMusic();
     }
 }

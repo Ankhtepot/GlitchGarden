@@ -163,6 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 2
   deathVFX: {fileID: 198416179944302826, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
+  GC: {fileID: 0}
 --- !u!114 &5836713476102522335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8595658e691d5eb4f8a495a97e6cd0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 0
+  walkingSpeed: 3
   walkingSpeedActual: 0
   attackPower: 1
   currentTarget: {fileID: 0}

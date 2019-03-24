@@ -574,7 +574,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4936100901601502556}
+      - m_Target: {fileID: 1307618610}
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -748,6 +748,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261517343}
   m_CullTransparentMesh: 0
+--- !u!114 &1307618610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1061943153, guid: 6955f075bd7003f40b1b049d598e912d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4936100901601502555}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083027fa53f8b9044bae1776b4819cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1371258565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1027,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1446615503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1307618610}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1001 &4936100901601502555
@@ -1087,15 +1110,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6955f075bd7003f40b1b049d598e912d, type: 3}
---- !u!114 &4936100901601502556 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4936100902536525273, guid: 6955f075bd7003f40b1b049d598e912d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4936100901601502555}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 083027fa53f8b9044bae1776b4819cbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

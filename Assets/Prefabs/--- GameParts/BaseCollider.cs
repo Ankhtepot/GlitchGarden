@@ -8,8 +8,8 @@ using UnityEngine;
 public class BaseCollider : MonoBehaviour
 {
 #pragma warning disable 649
-#pragma warning restore 649
     [SerializeField] ParticleSystem losingPlayerHealthVFX;
+#pragma warning restore 649
     [SerializeField] PlayerHealthText healthText;
     [SerializeField] Health health;
     [SerializeField] float destroyAttackerDelay = 0.5f;
@@ -33,8 +33,7 @@ public class BaseCollider : MonoBehaviour
 
     public void LoseProcess() {
         print("I lost");
-        SceneLoader SC = FindObjectOfType<SceneLoader>();
-        SC.LoadGameOverScreen();
+        FindObjectOfType<LevelController>().HandleLosingLevel();
     }
 
     private void assignHealthText() {
@@ -43,13 +42,8 @@ public class BaseCollider : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision) {
-    //    print("Collided");
-    //        GameObject otherObject = collision.gameObject;
-    //        if (otherObject.GetComponent<Attacker>()) {
-    //            GetComponent<Health>().ReceiveDamage(1);
-    //            healthText.UpdateText(health.getHealthpoints());
-    //        Destroy(otherObject);
-    //        }
-    //}
+    public int getBaseColliderHealth()
+    {
+        return health.getHealthpoints();
+    }
 }

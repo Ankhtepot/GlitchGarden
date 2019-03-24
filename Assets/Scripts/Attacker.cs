@@ -14,6 +14,17 @@ public class Attacker : MonoBehaviour
     [SerializeField] Animator animator;
 #pragma warning restore 649
 
+    //Caches
+    LevelController GC;
+
+    [SerializeField] public static float WalkSpeedModifier;
+
+    private void Awake()
+    {
+        GC = FindObjectOfType<LevelController>();
+        GC.addAttacker();
+    }
+
     void Start()
     {
         walkingSpeedActual = 0f;
@@ -27,7 +38,7 @@ public class Attacker : MonoBehaviour
 
     public void SetWalkingSpeed(float newSpeed)
     {
-        walkingSpeedActual = newSpeed;
+        walkingSpeedActual = newSpeed * WalkSpeedModifier;
     }    
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -60,5 +71,11 @@ public class Attacker : MonoBehaviour
         if(health) {
             health.ReceiveDamage(attackPower);
         }
+    }
+
+    private void OnDestroy()
+    {
+        //print("Attackers OnDestroy called");
+        GC.substractAttacker();
     }
 }
