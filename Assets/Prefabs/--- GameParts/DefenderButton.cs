@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))] 
@@ -11,7 +12,18 @@ public class DefenderButton : MonoBehaviour
     [SerializeField] Color onColor;
     [SerializeField] public bool isOn;
     [SerializeField] public Defender spawnedObject;
+    [SerializeField] TextMeshPro costText;
 #pragma warning restore 649
+
+    private void Start()
+    {
+        SetButtonCost();
+    }
+
+    private void SetButtonCost()
+    {
+        costText.text = spawnedObject.Cost.ToString();
+    }
 
     private void OnMouseDown() {
         AllDefenderButtonsOff();

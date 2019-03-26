@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionPreset: 0
   movementSpeed: 10
-  attackPower: 1
+  attackPower: 30
   healthPoints: 1
   lifetime: 5
 --- !u!58 &512048875400889449

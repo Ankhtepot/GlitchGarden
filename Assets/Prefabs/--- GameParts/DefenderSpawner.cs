@@ -40,7 +40,12 @@ public class DefenderSpawner : MonoBehaviour {
     }
 
     private bool isClickedSquareOccupied(Vector2 checkedSquare) {
-       // print("Clicked square is occupied: " + occupiedGridSquares.Contains(checkedSquare));
+        // print("Clicked square is occupied: " + occupiedGridSquares.Contains(checkedSquare));
         return occupiedGridSquares.Contains(checkedSquare);
+    }
+
+    public void FreeSquare(Vector2 square)
+    {
+        occupiedGridSquares.RemoveAll(contained => contained == square);
     }
 }

@@ -313,5 +313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505a11d6fec0e3442a3ca478f3bb5770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 2
+  healthPoints: 20
   deathVFX: {fileID: 0}
+  GC: {fileID: 0}

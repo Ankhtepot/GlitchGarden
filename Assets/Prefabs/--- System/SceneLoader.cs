@@ -29,7 +29,7 @@ public class SceneLoader : MonoBehaviour
         if (activeSceneIndex < totalSceneCount)
         {
             print("New level shuld be loaded");
-            loadScene(SceneManager.GetActiveScene().buildIndex);
+            loadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
 

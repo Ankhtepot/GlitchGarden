@@ -38,6 +38,8 @@ public class AttackerSpawner : MonoBehaviour
 
     private void spawnEnemy()
     {
+        if (attackers.Length == 0) return;
+
         Attacker newAttacker = Instantiate(
             attackers[Random.Range(0, attackers.Length)], transform.position, Quaternion.identity) as Attacker;
         newAttacker.transform.parent = transform;

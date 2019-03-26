@@ -18,6 +18,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] SoundMachine SM;
     [SerializeField] SceneLoader SL;
     [SerializeField] float loadNextLevelDelay = 2f;
+    [SerializeField] GameObject loseEffectParent;
 #pragma warning restore 649
 
     private void Start()
@@ -51,15 +52,18 @@ public class LevelController : MonoBehaviour
         SM.SystemSounds.PlayWinLevelSound();
         yield return new WaitForSecondsRealtime(loadNextLevelDelay);
         print("next level should load now");
-
+        SL.LoadNextScene();
     }
 
     public void HandleLosingLevel()
     {
         loseText.gameObject.SetActive(true);
-        if (loseEffect) loseEffect.Play();
+        if (loseEffect)
+        {
+            Instantiate(loseEffect, transform.position, transform.rotation);
+        }
         SM.SystemSounds.PlayLoseLevelSound();
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     public void addAttacker()

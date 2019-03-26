@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
 
     private void Die() {
         if (GetComponent<BaseCollider>()) GetComponent<BaseCollider>().LoseProcess();
+        if (GetComponent<Defender>()) GetComponent<Defender>().LoseProcess(transform.position);
         else if (deathVFX) Instantiate(deathVFX, transform.position, Quaternion.identity).Play();
        
         Destroy(gameObject);
